@@ -1,5 +1,5 @@
 # React Tic-Tac-Toe
-React head-to-head for JS Coding Nights Munich.
+Head-to-head game implementation for JS Coding Nights Munich.
 
 ### Task: Implement a Tic-Tac-Toe board using React or React Native.
 #### Basic: Game Screen
@@ -19,6 +19,8 @@ React head-to-head for JS Coding Nights Munich.
 # Usage
 ````
 git clone https://github.com/adamterlson/react-tic-tac-toe.git
+cd react-tic-tac-toe
+cd Native OR cd Web
 npm install
 ````
 
