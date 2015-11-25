@@ -13,3 +13,17 @@
 * Add a moves log to the bottom of the game screen.  Show the list of moves made by each player of the form `NAME (X/O) : ROW,COL`
 * Add a player statistics.  Number of wins, total number of games, etc.
 * Game history log with date and winner
+
+
+# Usage
+````
+git clone https://github.com/adamterlson/react-tic-tac-toe.git
+npm intall
+````
+
+## Native
+Complete the Requirements in the [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html) guide.
+Open the ios xcode project in XCode and run it.  I recommend not attempting Android support now.
+
+## Web
+From the web folder, run `npm dev` and navigate to [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html).
