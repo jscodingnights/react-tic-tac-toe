@@ -1,19 +1,5 @@
 let DIMENSION = 3;
 
-function display(board) {
-  let display = '';
-  let prevRow;
-  boardLoop(board, (val, coord) => {
-    if (coord.row !== prevRow) {
-      display += '\n';
-      prevRow = coord.row;
-    }
-    display += `${val == null ? '-' : val} `;
-  });
-  display += '\n';
-  console.log(display);
-}
-
 function boardLoop(board, fn) {
   for (let row = 0; row < DIMENSION; row++) {
     for (let col = 0; col < DIMENSION; col++) {
@@ -103,5 +89,19 @@ export default let game = {
     winner = winner || diagonals.reduce((hasWon, diagonal) => hasWon || game.check(diagonal), null);
 
     return winner;
+  },
+
+  display(board) {
+    let display = '';
+    let prevRow;
+    boardLoop(board, (val, coord) => {
+      if (coord.row !== prevRow) {
+        display += '\n';
+        prevRow = coord.row;
+      }
+      display += `${val == null ? '-' : val} `;
+    });
+    display += '\n';
+    console.log(display);
   }
-};
+}

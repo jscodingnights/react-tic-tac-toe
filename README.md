@@ -53,7 +53,7 @@ if (winState) {
 }
 
 // Display the board state to the console
-game.displayBoard(board);
+game.display(board);
 ```
 
 ### Common API
