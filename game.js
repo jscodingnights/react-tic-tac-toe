@@ -35,7 +35,6 @@ export default let game = {
       }
     }
 
-    board.toString = () => display(board);
     return board;
   },
 
