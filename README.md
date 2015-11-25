@@ -1,4 +1,5 @@
 # React Tic-Tac-Toe
+React head-to-head for JS Coding Nights Munich.
 
 ## Task: Implement a Tic-Tac-Toe board using React or React Native.
 ### Basic: Game Screen
