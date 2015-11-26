@@ -1,3 +1,20 @@
 .Overview-wrapper {
     text-align: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Overview-restart {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    line-height: 150px;
+    text-align: center;
+    background-color: #ffd54f;
 }

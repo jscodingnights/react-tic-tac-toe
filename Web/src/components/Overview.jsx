@@ -50,12 +50,12 @@ export default class Overview extends React.Component {
         }
 
         return (
-            <section className="Overview-wrapper">
-                <button label="Restart" onClick={this._restartGame}>
-                    Restart
-                </button>
-                {content}
-            </section>
+            <div>
+                <div className="Overview-restart" onClick={this._restartGame}>Restart</div>
+                <section className="Overview-wrapper">
+                    {content}
+                </section>
+            </div>
         );
             
     }
