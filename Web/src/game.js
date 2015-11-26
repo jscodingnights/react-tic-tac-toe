@@ -8,7 +8,7 @@ function boardLoop(board, fn) {
   }
 }
 
-export default let game = {
+let game = {
   /**
    * Create a new board (2D array)
    */
@@ -106,3 +106,5 @@ export default let game = {
     console.log(display);
   }
 }
+
+export default game;

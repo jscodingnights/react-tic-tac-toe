@@ -1,26 +1,34 @@
-var path = require('path');
-var config = {
-  entry: path.resolve(__dirname, 'app/main.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
-    ]
-  }
-};
+function getEntrySources(sources) {
+    if (process.env.NODE_ENV !== "production") {
+        sources.push("webpack-dev-server/client?http://localhost:8080");
+    }
 
-module.exports = config;
+    return sources;
+}
+
+module.exports = {
+    entry: {
+        index: getEntrySources([
+            "./src/index.jsx",
+        ]),
+    },
+    output: {
+        publicPath: "http://localhost:8080/",
+        filename: "./build/[name].bundle.js",
+        chunkFilename: "[id].chunk.js"
+    },
+    devtool: "source-map",
+    module: {
+        loaders: [
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+            },
+            {
+                test: /\.jsx?$/,
+                loaders: ["babel?presets[]=es2015&presets[]=react"],
+                exclude: /node_modules/
+            },
+        ]
+    }
+};
