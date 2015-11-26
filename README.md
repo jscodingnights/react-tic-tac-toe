@@ -1,5 +1,5 @@
 # React Tic-Tac-Toe (aka Naughts and Crosses)
-Head-to-head game implementation for JS Coding Nights Munich.
+Side-by-side game implementation done at JS Coding Nights Munich.
 
 ### Task: Implement a Tic-Tac-Toe board using React or React Native.
 How the app looks is up to you.  Consider the following as a loose thought for what your component structure might look like:
