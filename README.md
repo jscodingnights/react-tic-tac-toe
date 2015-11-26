@@ -61,7 +61,7 @@ From the web folder, run `npm dev` and navigate to [http://localhost:8080/webpac
 
 
 #Game.js
-I've provided basic game logic so everyone can focus on React.  You may move the game file to a more convenient location of course, but it presently sits at the root.
+I've provided basic game logic so everyone can focus on React.  You may move and modify the game file to suit your needs!
 
 ###Usage
 ```javascript
