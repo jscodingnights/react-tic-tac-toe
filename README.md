@@ -72,7 +72,7 @@ let board = game.createBoard();
 
 // Make some moves (NON-DESTRUCTIVE, RETURNS NEW BOARD STATE)
 // Pass 1 for X's, 0 for O's.
-let board = game.set(board, 0, 0, 0); // O placed at coord row 0, col 0
+board = game.set(board, 0, 0, 0); // O placed at coord row 0, col 0
 board = game.set(board, 1, 1, 0); // X placed at coord row 1, col 0
 board = game.set(board, 0, 0, 1); // X placed at coord row 1, col 0
 
