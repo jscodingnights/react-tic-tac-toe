@@ -52,8 +52,7 @@ npm install
 ````
 
 ### Native
-Complete the Requirements in the [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html) guide.
-Open the ios xcode project in XCode and run it.  I recommend not attempting to do both iOS and Android support simultaneously, pick one.
+Complete the Requirements in the [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html) guide.  I recommend not attempting to do both iOS and Android support simultaneously, pick one.
 
 If you want a sample app structure and Redux implementation in Native, check out [react-messenger](https://github.com/adamterlson/react-native-messenger) which can be played with online [at rnplay.org](https://rnplay.org/apps/URNW3w).
 
