@@ -8,7 +8,7 @@ export default class WinScreen extends React.Component {
     render() {
         return (
             <div className="WinScreen-wrapper">
-                A winrar is you, player {this.props.winner}!
+                Player {this.props.winner}, you win money!
             </div>
         )
     }

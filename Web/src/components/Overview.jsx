@@ -9,18 +9,19 @@ import WinScreen from './WinScreen.jsx';
 
 import game from '../game.js';
 
-var board = new game.createBoard();
+var defaultState = {
+    board: game.createBoard(),
+    turn: 0
+}
 
 export default class Overview extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            board: board,
-            turn: 0
-        };
+        this.state = defaultState;
 
         this.updateRow = this.updateRow.bind(this);
+        this._restartGame = this._restartGame.bind(this);
     }
 
     updateRow(row, column) {
@@ -33,26 +34,29 @@ export default class Overview extends React.Component {
         });
     }
 
+    _restartGame() {
+        this.setState(defaultState);
+    }
+
     render() {
         let winner = game.checkBoard(this.state.board);
 
-        let winMessage;
+        let content;
 
         if (winner) {
-            return (
-                <section className="Overview-wrapper">
-                    <WinScreen winner={winner.winner} />
-                </section>
-            );
+            content = (<WinScreen winner={winner.winner} />);
+        } else {
+            content = (<Board board={this.state.board} callback={this.updateRow} />);
         }
 
         return (
             <section className="Overview-wrapper">
-
-                <Board board={this.state.board} callback={this.updateRow} />
-                {winMessage}
+                <button label="Restart" onClick={this._restartGame}>
+                    Restart
+                </button>
+                {content}
             </section>
-
-        )
+        );
+            
     }
 }
