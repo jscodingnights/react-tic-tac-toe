@@ -45,7 +45,7 @@ How the app looks is up to you.  Consider the following as a loose thought for w
 
 # Usage
 ````
-git clone https://github.com/adamterlson/react-tic-tac-toe.git
+git clone https://github.com/jscodingnights/react-tic-tac-toe.git
 cd react-tic-tac-toe
 cd Native; # or cd Web
 npm install
