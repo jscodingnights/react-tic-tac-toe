@@ -74,7 +74,7 @@ let board = game.createBoard();
 // Pass 1 for X's, 0 for O's.
 board = game.set(board, 0, 0, 0); // O placed at coord row 0, col 0
 board = game.set(board, 1, 1, 0); // X placed at coord row 1, col 0
-board = game.set(board, 0, 0, 1); // X placed at coord row 1, col 0
+board = game.set(board, 0, 0, 1); // O placed at coord row 0, col 1
 
 // Check to see if anyone has won
 let winState = game.checkBoard(board);
