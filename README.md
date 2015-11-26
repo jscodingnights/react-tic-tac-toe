@@ -87,7 +87,7 @@ if (winState) {
 game.display(board);
 ```
 
-### Common API
+### Game API
 
 ###`createBoard()`
 Creates a new game board.  This is a 2D array where the top level is an array of rows, so each child array is a column, so indexed via `board[row][column]`.  All cells initialized to null.
