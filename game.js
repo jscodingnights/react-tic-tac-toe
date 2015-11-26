@@ -71,22 +71,23 @@ export default let game = {
    */
   checkBoard(board) {
     let winner;
+    
     // Check rows
-    winner = board.reduce((hasWon, row) => hasWon || game.check(row), null);
+    winner = board.reduce((hasWon, row) => hasWon || game.check(row), false);
 
     // Check cols
     let cols = [];
     for (let i = 0; i < DIMENSION; i++) {
       cols.push(board.map(row => row[i]));
     }
-    winner = winner || cols.reduce((hasWon, col) => hasWon || game.check(col), null);
+    winner = winner || cols.reduce((hasWon, col) => hasWon || game.check(col), false);
 
     // Check diagonals
     let diagonals = [
       board.map((row, i) => row[i]),
       board.map((row, i) => row[DIMENSION-1-i])
     ];
-    winner = winner || diagonals.reduce((hasWon, diagonal) => hasWon || game.check(diagonal), null);
+    winner = winner || diagonals.reduce((hasWon, diagonal) => hasWon || game.check(diagonal), false);
 
     return winner;
   },
