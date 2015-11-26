@@ -40,7 +40,7 @@ How the app looks is up to you.  Consider the following as a loose thought for w
 * Prompt the players for their names rather than using just X and O.
 * Add a moves log to the bottom of the game screen.  Show the list of moves made by each player of the form `NAME (X/O) : ROW,COL`
 * Add a player statistics.  Number of wins, total number of games, etc.
-* Game history log with date and winner
+* Game history log
 
 
 # Usage
