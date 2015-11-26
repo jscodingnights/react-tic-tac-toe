@@ -38,7 +38,7 @@ export default let game = {
       ...board.slice(0, row),
       [
         ...board[row].slice(0, col),
-        ...[val],
+        val,
         ...board[row].slice(col+1)
       ],
       ...board.slice(row+1)
