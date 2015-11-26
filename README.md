@@ -57,7 +57,7 @@ Complete the Requirements in the [Getting Started](https://facebook.github.io/re
 If you want a sample app structure and Redux implementation in React Native, check out [react-messenger](https://github.com/adamterlson/react-native-messenger) which can be played with online [at rnplay.org](https://rnplay.org/apps/URNW3w).
 
 ### Web
-From the web folder, run `npm dev` and navigate to [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html).
+From the web folder, run `npm run dev` and navigate to [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html).
 
 
 #Game.js
