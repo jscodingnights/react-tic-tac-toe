@@ -3,13 +3,11 @@
 import './index.scss';
 
 import React from 'react'
-import { Router, Route, Link } from 'react-router'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
 
-import { routes } from './Routes.jsx'
+import Overview from './components/Overview.jsx';
 
 ReactDOM.render(
-    routes,
+    <Overview />,
     document.getElementById('index')
 )
