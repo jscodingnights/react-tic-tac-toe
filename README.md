@@ -6,12 +6,13 @@ How the app looks is up to you.  Consider the following as a loose thought for w
 
 ````
 <App>
+    <Title />
+    
     // New Game:
     <CreateGame />
     
     // Game in Progress:
     <Game>
-        <Title />
         <Players>
             <Player />
             <Player />
