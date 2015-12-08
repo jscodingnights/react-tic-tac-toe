@@ -1,12 +1,9 @@
 {
   "author": "Sorin Muntean <hello@sorinmuntean.ro>",
-  "license": "MIT",
-  "homepage": "https://github.com/sxn/react-tic-tac-toe",
   "name": "react-tic-tac-toe",
   "version": "0.0.1",
   "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/sxn/react-tic-tac-toe.git"
+    "type": "git"
   },
   "readme": "../README.md",
   "scripts": {
