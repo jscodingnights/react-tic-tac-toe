@@ -105,6 +105,6 @@ let game = {
     display += '\n';
     console.log(display);
   }
-}
+};
 
 export default game;
