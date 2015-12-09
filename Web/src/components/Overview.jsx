@@ -1,32 +1,32 @@
-'use strict';
-
-import './Overview.scss';
-
 import React from 'react';
-
 import Board from './Board.jsx';
-import WinScreen from './WinScreen.jsx';
-
 import game from '../game.js';
-
-var defaultState = {
-    board: game.createBoard(),
-    turn: 0
-}
 
 export default class Overview extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = defaultState;
-
-        this.updateRow = this.updateRow.bind(this);
-        this._restartGame = this._restartGame.bind(this);
+        this.state = this._newGameState();
     }
 
-    updateRow(row, column) {
+    _newGameState() {
+        return {
+            board: game.createBoard(),
+            turn: 0
+        };
+    }
+
+    _restartGame() {
+        this.setState(this._newGameState());
+    }
+
+    _onPlay(row, col) {
+        if (this.state.board[row][col] != null) {
+            return;
+        }
+
         let newTurn = this.state.turn + 1;
-        let newBoard = game.set(this.state.board, newTurn % 2 ? 0 : 1, row, column);
+        let newBoard = game.set(this.state.board, newTurn % 2 ? 0 : 1, row, col);
 
         this.setState({
             board: newBoard,
@@ -34,29 +34,53 @@ export default class Overview extends React.Component {
         });
     }
 
-    _restartGame() {
-        this.setState(defaultState);
-    }
-
     render() {
         let winner = game.checkBoard(this.state.board);
-
+        let tie = this.state.turn === 9 && !winner;
         let content;
 
         if (winner) {
-            content = (<WinScreen winner={winner.winner} />);
+            content = this._renderWinner(winner);
+        } else if (tie) {
+            content = this._renderTie();
         } else {
-            content = (<Board board={this.state.board} callback={this.updateRow} />);
+            content = this._renderGame();
         }
 
         return (
-            <div>
-                <div className="Overview-restart" onClick={this._restartGame}>Restart</div>
-                <section className="Overview-wrapper">
-                    {content}
-                </section>
+            <div className="overview">
+                {content}
             </div>
         );
-            
+    }
+
+    _renderGame() {
+        return <Board board={this.state.board} onClick={(row, col) => this._onPlay(row, col)} />
+    }
+
+    _renderWinner(winner) {
+        return (
+            <div>
+                <h1 className="winner">
+                    {winner.winner ? 'X' : 'O'}'s Win!
+                </h1>
+                {this._renderRestart()}
+            </div>
+        );
+    }
+
+    _renderTie() {
+        return (
+            <div>
+                <h1 className="winner">
+                    It's a tie!
+                </h1>
+                {this._renderRestart()}
+            </div>
+        );
+    }
+
+    _renderRestart() {
+        return <div className="restart" onClick={() => this._restartGame()}>Restart</div>
     }
 }

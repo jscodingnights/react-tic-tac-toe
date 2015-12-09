@@ -1,22 +1,18 @@
-'use strict';
-
-import './Cell.scss';
-
 import React from 'react';
-
 import game from '../game.js';
 
-
 export default class Cell extends React.Component {
-    _handleClick() {
-        this.props.callback(this.props.rowId, this.props.columnId);
-    }
-
     render() {
+        let player;
+
+        if (this.props.cell != null) {
+            player = this.props.cell ? 'X' : 'O';
+        }
+
         return (
-            <div onClick={() => this._handleClick()} className="Cell-wrapper">
-                {this.props.value}
+            <div onClick={() => this.props.onClick()} className="cell">
+                <span>{player}</span>
             </div>
-        )
+        );
     }
 }
