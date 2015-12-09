@@ -22,16 +22,17 @@ export default class App extends React.Component {
     }
 
     _play(row, col) {
-        if (this.state.board[row][col] != null) {
+        if (this.state.board[row][col] != null || this.state.winner != null) {
             return;
         }
 
-        let newTurn = this.state.turn + 1;
-        let newBoard = game.set(this.state.board, newTurn % 2, row, col);
+
+        let turn = this.state.turn + 1;
+        let board = game.set(this.state.board, turn % 2, row, col);
 
         this.setState({
-            board: newBoard,
-            turn: newTurn
+            board,
+            turn
         });
     }
 

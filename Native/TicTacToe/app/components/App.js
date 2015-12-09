@@ -27,8 +27,8 @@ export default class App extends React.Component {
         };
     }
 
-    _onPress(row, col) {
-        if (this.state.winner != null) {
+    _play(row, col) {
+        if (this.state.board[row][col] != null || this.state.winner != null) {
             return;
         }
 
@@ -66,7 +66,7 @@ export default class App extends React.Component {
                 <View style={styles.body}>
                     <Board
                         board={this.state.board}
-                        onPress={(row, col) => this._onPress(row,col)} />
+                        onPress={(row, col) => this._play(row,col)} />
                 </View>
                 <View style={styles.footer}>
                     <GameResults
