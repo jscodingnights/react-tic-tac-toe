@@ -1,13 +1,13 @@
 'use strict';
 
-import './index.scss';
+import './styles.scss';
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Overview from './components/Overview.jsx';
+import App from './components/App.jsx';
 
 ReactDOM.render(
-    <Overview />,
+    <App />,
     document.getElementById('index')
 )
