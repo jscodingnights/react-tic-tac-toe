@@ -17,11 +17,11 @@ export default class App extends React.Component {
         };
     }
 
-    _restartGame() {
+    _restart() {
         this.setState(this._newGameState());
     }
 
-    _onPlay(row, col) {
+    _play(row, col) {
         if (this.state.board[row][col] != null) {
             return;
         }
@@ -41,13 +41,13 @@ export default class App extends React.Component {
             <div>
                 <Board
                     board={this.state.board}
-                    onClick={(row, col) => this._onPlay(row, col)} />
+                    onClick={(row, col) => this._play(row, col)} />
 
                 <GameResults
                     winner={winner}
                     dimension={3}
                     move={this.state.move}
-                    onRestartClick={() => this._restartGame()} />
+                    onRestartClick={() => this._restart()} />
             </div>
         );
     }
