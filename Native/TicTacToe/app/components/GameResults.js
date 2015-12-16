@@ -44,7 +44,7 @@ export default class GameResults extends React.Component {
 
     _renderNewGameButton() {
         return (
-            <Text onPress={() => this.props.onGameReset()} style={styles.newGame}>
+            <Text onPress={() => this.props.resetGame()} style={styles.newGame}>
                 Start a new Game
             </Text>
         );

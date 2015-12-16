@@ -13,7 +13,7 @@ export default class Board extends React.Component {
                     return <Row
                         key={index}
                         row={row}
-                        onPress={(col) => this.props.onPress(index, col)} />
+                        onPress={(col) => this.props.play(index, col)} />
                 })}
             </View>
         );

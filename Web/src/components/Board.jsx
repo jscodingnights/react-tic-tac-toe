@@ -9,7 +9,7 @@ export default class Board extends React.Component {
                     return (
                         <Row key={index}
                              row={row}
-                             onClick={(column) => this.props.onClick(index, column)}/>
+                             onClick={(column) => this.props.onClick(this.props.board, this.props.move, index, column)}/>
                     );
                  })}
             </section>
