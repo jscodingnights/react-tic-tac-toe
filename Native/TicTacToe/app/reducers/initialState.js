@@ -3,7 +3,7 @@ import game from '../game';
 const _initialState = {
   board: game.createBoard(3),
   winner: null,
-  move: 0,
+  player: 1,
   dimension: 3
 };
 
@@ -18,11 +18,13 @@ function initialState(state = _initialState, action) {
     }
   }
 
-if (action && action.type === 'RESET_GAME') {
-    let board = game.createBoard(state.dimension);
+  if (action && action.type === 'RESET_GAME') {
+    let dimension = state.dimension;
+    let board = game.createBoard(dimension);
     return {
       ..._initialState,
-      board
+      board,
+      dimension
     }
   }
 

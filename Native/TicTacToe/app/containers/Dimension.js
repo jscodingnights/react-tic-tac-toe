@@ -1,6 +1,6 @@
 import { connect } from 'react-redux/native';
 import Dimension from '../components/Dimension';
-import newGameAction from '../actions/newGame';
+import { newGame } from '../actions/index';
 
 function mapStateToProps(state) {
   return {
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      newGame: (dimension) => dispatch(newGameAction(dimension))
+      newGame: (dimension) => dispatch(newGame(dimension))
   };
 }
 

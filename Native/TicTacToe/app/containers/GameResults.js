@@ -1,6 +1,6 @@
 import { connect } from 'react-redux/native';
 import GameResults from '../components/GameResults';
-import resetAction from '../actions/resetGame';
+import { resetGame } from '../actions/index';
 
 function mapStateToProps(state)  {
   return state;
@@ -8,7 +8,7 @@ function mapStateToProps(state)  {
 
 function mapDispatchToProps(dispatch) {
   return {
-    resetGame: () => dispatch(resetAction())
+    resetGame: () => dispatch(resetGame())
   };
 }
 

@@ -1,12 +1,16 @@
 import initialState from './initialState';
-import playReducer from './play';
+import { 
+  playerMoveReducer, 
+  currentPlayerReducer, 
+  boardStateReducer 
+} from './game';
 
-const app = function(state, action) {
-  if (typeof state === 'undefined') {
-    return initialState(state);
-  }
+const app = function(state = initialState(), action) {
   switch(action.type) {
-    case 'PLAY': return playReducer(state, action);
+    case 'PLAYER_MOVE': 
+      let newState = playerMoveReducer(state, action);
+      newState = currentPlayerReducer(newState, action);
+      return boardStateReducer(newState, action);
     case 'NEW_GAME': return initialState(state, action);
     case 'RESET_GAME': return initialState(state, action);
     default: return state;

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux/native';
 import Board from '../components/Board';
-import playAction from '../actions/play';
+import { move } from '../actions/index';
 
 function mapStateToProps(state) {
   return state;
@@ -8,7 +8,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    play: (row, col) => dispatch(playAction(row, col))
+    move: (player, coord) => dispatch(move(player, coord))
   };
 }
 
