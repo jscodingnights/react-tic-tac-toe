@@ -10,7 +10,7 @@ export default class Dimension extends React.Component {
             <TextInput
                 style={styles.dimension}
                 blurOnSubmit={true}
-                onChangeText={(dimension) => this.props.onChangeDimension(dimension)}
+                onChangeText={(dimension) => this.props.newGame(dimension)}
                 value={this.props.dimension.toString()}
             />
         );
